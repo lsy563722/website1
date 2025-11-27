@@ -1,0 +1,441 @@
+@import url("http://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    
+    scroll-behavior: smooth; /* 平滑滚动效果 */
+  
+  }
+  .bg-image {
+    background-image: url('../IMG/en_1.png'); /* 替换为您的图片路径 */
+    background-size: cover; /* 这将确保整个图片都可见 */
+    background-position: center; /* 将图片置于元素中心 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    height: 1000px; /* 将元素的高度设置为视口高度的100% */
+    width: 100%; /* 将元素的宽度设置为视口宽度的100%，如果需要的话 */
+    position: relative;
+}
+
+
+.container1 {
+    position: absolute;
+    top: 30%;
+    left:40%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 249, 249);
+    text-align: left;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0); /* 半透明黑色背景 */
+    border-radius: 10px; /* 圆角边框 */
+    /*writing-mode: vertical-rl; /* 文字竖排，从右到左 */
+    /* writing-mode: vertical-lr; 若需要从左到右竖排，请使用这行代码 */
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .container1 {
+    top: 15vh; /* 在中等屏幕上调整位置 */
+    left: 50%;
+    transform: translate(-50%, -15%);
+    width: 70%; /* 在中等屏幕上调整宽度 */
+    padding: 15px; /* 调整内边距 */
+  }
+}
+.arrow-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white; /* 设置图标颜色 */
+    font-size: 96px; /* 设置图标大小 */
+    text-decoration: none;
+    
+}
+
+.arrow-button:hover {
+    color: #ccc; /* 鼠标悬停时改变颜色 */
+}
+/*-------------------------------------------------------------------------------------------------------------------------*/
+  .class4{
+    height: 1000px;
+    /*background-color: black;*/
+    color: aliceblue;
+
+  }
+  .c4bg_image {
+    background-image: url('../IMG/f6.png'); /* 替换为您的图片路径 */
+    background-size: cover; /* 这将确保整个图片都可见 */
+    background-position: center; /* 将图片置于元素中心 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    height: 1000px; /* 将元素的高度设置为视口高度的100% */
+    width: 100%; /* 将元素的宽度设置为视口宽度的100%，如果需要的话 */
+    position: relative;
+}
+/*-------------------------------------------------------------------------------------------------------------------------*/
+  .class3{
+    position: relative;
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+    background: linear-gradient(to top right, black 50%, white 50%);
+  }
+  .class3 h1{
+    text-align:center;
+  }
+  .emap{
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    top: 10%;  /* 放到容器的顶部 */
+    right: 0; /* 放到容器的右侧 */
+    
+    
+  }
+  .emap img{
+    width: 100%; /* 让图片宽度填满容器 */
+    height: auto; /* 保持图片原始宽高比 */
+    object-fit: cover; /* 或者可以使用 contain 根据需求 */
+    object-position: center; /* 确保图片在容器中居中 */
+    cursor:zoom-in; /* 当鼠标悬停在图片上时，光标将变成手形 */
+    
+  }
+  .c3_text{
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    bottom: 0;  /* 放到容器的顶部 */
+    left: 0; /* 放到容器的右侧 */
+    
+
+  }
+  .c3_text p{
+    margin: 20px;
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+
+  /* 模态窗口（背景）样式 */
+.modal {
+    display: none; /* 默认不显示 */
+    position: fixed; /* 固定定位 */
+    z-index: 100; /* z-index值确保它在页面上的其他元素之上 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 全屏宽 */
+    height: 100%; /* 全屏高 */
+    overflow: auto; /* 如果需要滚动条 */
+    background-color: rgb(0,0,0); /* 背景颜色 */
+    background-color: rgba(0,0,0,0.9); /* 用透明度的黑色 */
+  }
+  
+  /* 模态内容（图片）样式 */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px; /* 可以根据需要设置最大宽度 */
+  }
+  
+  /* 关闭按钮样式 */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+ /*-------------------------------------------------------------------------------------------------------------------------*/ 
+    .class2{
+    
+    height: 1000px;
+    background-color: rgb(0, 0, 0);
+    color:aliceblue;
+    }
+
+  h1 {
+    font-size: 60px; /* 大标题的字体大小 */
+    margin-bottom: 20px;
+    
+  }
+  p {
+    font-size: 30px; /* 正文的字体大小 */
+  }
+
+.slider-container {
+    position: relative;
+    width: 80vh; /* 或您期望的宽度 */
+    height: 40vh; /* 或您期望的高度 */
+    margin: auto;
+    
+}
+.slider {
+  
+  width: 80vh; /* 或者你想要的宽度 */
+  height: 30vh; /* 或者你想要的高度 */
+}
+.slider div {
+    background-size: cover; /* 背景图覆盖整个容器 */
+    background-position: center; /* 背景图居中 */
+    height: 30vh; /* 轮播项的高度 */
+}
+/* 设置轮播点的默认颜色 */
+.slick-dots li button:before {
+    color: white !important;
+}
+
+.slick-dots li.slick-active button:before {
+    color: red !important;
+}
+
+
+.slider1 {
+    position: relative;
+    width: 80vh; /* 或者你想要的宽度 */
+    height: 40vh; /* 或者你想要的高度 */
+    margin: auto;
+    overflow: hidden;
+    background-color: #9c9c9c; /* 灰色背景 */
+    padding: 8px; /* 创建边框效果的内边距 */
+    box-sizing: border-box; /* 确保内边距不会影响到总体宽度 */
+    border: 4px solid #ffffff; /* 边框颜色和宽度 */
+    
+  }
+
+
+
+.info-boxes {
+  display: flex;
+  justify-content: space-around; /* 使方框在水平方向上均匀分布 */
+  padding: 20px;
+}
+
+.info-box {
+  width: 300px; /* 每个方框占据容器宽度的20% */
+  height: 300px;
+  border: 1px solid #ffffff; /* 方框边框 */
+  padding: 10px;
+  margin: 10px; /* 确保方框之间有一些空间 */
+  background-color: #000000; /* 方框背景色 */
+  text-align: center; /* 文字居中 */
+  
+}
+
+.info-box h2 {
+  margin-top: 0;
+}
+
+.info-box p {
+  font-size: 14px;
+}
+.logo {
+    display: flex;        /* 设置为 Flex 容器 */
+    justify-content: space-around; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    margin: 10px; /* 确保方框之间有一些空间 */
+    
+  
+  }
+/*-------------------------------------------------------------------------------------------------------------------------*/
+.container{
+    position: relative;
+    top:500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.container .card{
+    /* 相对定位 */
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255,255,255,0.1);
+    margin: 30px;
+    border-radius: 15px;
+    /* 阴影 */
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    /* 溢出隐藏 */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    /* 背景模糊 */
+    backdrop-filter: blur(5px);
+}
+.container .card .content{
+    padding: 20px;
+    text-align: center;
+    /* 默认下移+隐藏 */
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .card:hover .content{
+    /* 鼠标移入，上移+显示 */
+    transform: translateY(0);
+    opacity: 1;
+}
+.container .card .content h2{
+    position: absolute;
+    top: -80px;
+    right: 25px;
+    font-size: 128px;
+    color: rgba(255,255,255,0.05);
+}
+.container .card .content h3{
+    font-size: 28px;
+    color: #fff;
+}
+.container .card .content p{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    margin: 10px 0 15px 0;
+}
+.container .card .content a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.container .card:nth-child(1) {
+    background-image: url('../IMG/en_1.png'); /* 设置背景图像 */
+    background-size: cover; /* 确保背景图像覆盖整个元素 */
+    background-position: center; /* 背景图像居中显示 */
+}
+.container .card:nth-child(2) {
+    background-image: url('../IMG/f2.png'); /* 设置背景图像 */
+    background-size: cover; /* 确保背景图像覆盖整个元素 */
+    background-position: center; /* 背景图像居中显示 */
+}
+.container .card:nth-child(3) {
+    background-image: url('../IMG/f3.png'); /* 设置背景图像 */
+    background-size: cover; /* 确保背景图像覆盖整个元素 */
+    background-position: center; /* 背景图像居中显示 */
+}
+/*-------------------------------------------------------------------------------------------------------------------------*/
+.container2{
+    position: relative;
+    /*top:50px;*/
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    width: 600px;
+    flex-wrap: wrap;
+    z-index: 1;
+    
+}
+.class2 p{
+    font-family: 'Rubik Doodle Shadow';
+}
+.text-container {
+    height: 600px;
+    width: 50%;
+    /*padding: 20px; /* 或根据需要调整 */
+    color: #d1d1d1; /* 文字颜色 */
+    border: 2px solid #fff; /* 添加白色边框，可以根据需要调整边框的厚度 */
+    border-radius: 20px;
+    
+}
+.text-container p{
+    font-size: 1.5rem;
+    font-family:'Times New Roman', Times, serif;
+    margin: 30px; /* 确保方框之间有一些空间 */
+    line-height: 1.8;
+    
+    
+}
+.flex-container2{
+    display: flex; /* 使用flex布局使得其子元素水平排列 */
+    
+  }
+.container2 .card2{
+    /* 相对定位 */
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: rgba(255,255,255,0.1);
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 15px;
+    /* 阴影 */
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    /* 溢出隐藏 */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    /* 背景模糊 */
+    backdrop-filter: blur(5px);
+}
+.container2 .card2 .content{
+    padding: 20px;
+    text-align: left;
+    /* 默认下移+隐藏 */
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+    
+}
+.container2 .card2:hover .content{
+    /* 鼠标移入，上移+显示 */
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.container2 .card2 .content p{
+    font-size: 32px;
+    color: #fff;
+    font-weight: 300;
+    margin: 10px 0 15px 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container2 .card2:nth-child(1) {
+    background-image: url('../IMG/f4.png'); /* 设置背景图像 */
+    background-size: cover; /* 确保背景图像覆盖整个元素 */
+    background-position: center; /* 背景图像居中显示 */
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 50px;
+    background: rgb(196, 195, 195); /* 或者任何您喜欢的颜色 */
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  /* 简单的过渡效果 */
+  .back-to-top:hover {
+    background: rgb(0, 0, 0); /* 鼠标悬停时的颜色变化 */
+
+  }
+  

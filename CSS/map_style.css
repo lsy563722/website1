@@ -1,0 +1,288 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+}
+
+#map {
+  flex: 0 0 85vh; /* Set the map height to half of the viewport */
+  width: 100%;
+  position: relative; 
+}
+
+#download-container {
+  /* Ensure the button container can wrap if needed */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#imageBox {
+  display: none; /* Initially set to invisible */
+  width: 100%; /* Image box occupies the entire container width */
+  padding: 10px; /* Adjust as needed */
+}
+
+
+/* Keep other styles unchanged */
+
+#over-layers-control .leaflet-control-layers-toggle {
+  
+  width: 100px; /* Or other dimensions */
+  height: 75px; /* Same as width */
+  
+}
+#over-layers-control .leaflet-control-layers-toggle::after {
+  content: 'Connectivity'; /* Your text content */
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Ensure text is centered */
+  font-size: 14px; /* Text size */
+  color: #333; /* Text color */
+}
+
+#base-layers-control .leaflet-control-layers-toggle {
+  /*background-image: url('path_to_base_icon.png');*/
+  width: 100px; /* Or other dimensions */
+  height: 75px; /* Same as width */
+  border-radius: 50%; /* This will make the button circular */
+  
+}
+#base-layers-control .leaflet-control-layers-toggle::after {
+  content: 'Basemap'; /* Your text content */
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Ensure text is centered */
+  font-size: 14px; /* Text size */
+  color: #333; /* Text color */
+}
+
+.leaflet-container .leaflet-control-mouseposition {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px #bbb;
+  padding: 0 5px;
+  margin:0;
+  color: #333;
+  font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.card-container {
+  display: flex; /* Enable Flexbox layout */
+  justify-content: space-around; /* Space between cards is evenly distributed */
+  flex-wrap: wrap; /* Allow cards to wrap if space is insufficient */
+  gap: 20px; /* Space between cards, can also use margin */
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  max-width: 300px;
+  /* If you need the card width to adjust responsively, set flex-basis or percentage width */
+  /* flex: 1; */
+  /* Or */
+  /* width: 100%; */
+}
+
+.card-img-top {
+  width: 100%;
+  display: block;
+  height: auto;
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Image will be scaled to fill the element's box, some parts may not be displayed */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  margin-bottom: .75rem;
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #333;
+}
+ 
+.legend-container {
+  display: flex;
+  align-items: stretch;
+}
+
+.legend-gradient {
+  width: 20px; /* Width can be adjusted as needed */
+  height: 100px; /* Height can be adjusted as needed */
+  border: 1px solid #999;
+  background: linear-gradient(to top, #440154, #3B528C, #21918D, #5DC963, #FDE725);
+}
+
+.legend-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5px; /* Adjust as needed */
+}
+
+.legend-labels span {
+  font-size: 0.8em; /* Adjust font size as needed */
+  text-align: left;
+}
+
+.legend-gradient-pop {
+  width: 20px; /* Width can be adjusted as needed */
+  height: 100px; /* Height can be adjusted as needed */
+  border: 1px solid #999;
+  background: linear-gradient(to top, #FF0000, #FFA500, #FFFF00, #0000FF, #008000);
+}
+.legend-gradient-green {
+  width: 20px; /* Width can be adjusted as needed */
+  height: 100px; /* Height can be adjusted as needed */
+  border: 1px solid #999;
+  background: linear-gradient(to bottom, 
+    rgb(0, 78, 31) 0%,    /* Dark green color, start from the bottom */
+    rgb(63, 166, 155) 40%, /* Darker green */
+    rgb(127, 255, 212) 70%, /* Lighter green */
+    rgb(191, 255, 233) 90%, /* Near white light green */
+    rgb(255, 255, 255) 100%); /* White color, end at the top */
+}
+
+
+.chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* 或者使用 space-around 以增加间隔 */
+    }
+
+.small-container {
+        flex: 0 0 60%; /* 每个小容器占行宽的 48%，留出间隙 */
+        /* flex: 1 1 48%; 也可以使用，这将使小容器在必要时可以收缩和伸展 */
+        height:450px; /* 或您希望的高度 */
+        margin-bottom: 20px; /* 每行容器之间的间隙 */
+        background-color: #e6e5e5; /* 仅用于视觉展示 */
+        border-radius: 15px;
+        overflow-x: auto; /* 启用水平滚动 */
+        
+    }
+.landcover{
+  position: relative;
+}
+
+.populationdensity {
+  overflow-x: auto; /* 启用水平滚动 */
+  width: 100%; /* 设置容器宽度为 100% */
+  position: relative;
+}
+.connectivity_mean{
+  position: relative;
+}
+.greenspace{
+  position: relative;
+}
+.chart-buttons button {
+  font-size: 16px; /* 增大字体大小 */
+  padding: 10px 20px; /* 增加按钮内部的填充空间 */
+  background-color: #006400; /* 设置按钮的背景颜色为墨绿色 */
+  color: white; /* 设置按钮文字颜色为白色 */
+  border: none; /* 移除边框 */
+  border-radius: 5px; /* 给按钮添加圆角 */
+  cursor: pointer; /* 将鼠标悬停时的指针更改为指针形状 */
+  margin: 5px; /* 增加按钮之间的空间 */
+  transition: background-color 0.3s; /* 添加一个过渡效果 */
+}
+
+.chart-buttons button:hover {
+  background-color: #008000; /* 鼠标悬停时更改按钮的背景颜色 */
+}
+
+.control-panel {
+  width: 35%; /* 控制栏占据剩余的宽度 */
+  float: right; /* 使其浮动到右侧 */
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* 可选：添加阴影效果 */
+  height: 430px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  background-color: #e6e5e5; 
+}
+
+.control-panel button {
+  display: block; /* 每个按钮占据整行 */
+  margin-bottom: 10px; /* 按钮之间的间隔 */
+  /* 这里可以添加更多的按钮样式 */
+}
+
+.search-input {
+  /* 调整输入框的样式 */
+  padding: 5px 10px; /* 内边距 */
+  margin-right: 10px; /* 右侧外边距，用于和按钮之间的间距 */
+  font-size: 16px; /* 字体大小 */
+  border: 1px solid #ccc; /* 边框 */
+  border-radius: 5px; /* 边框圆角 */
+  margin: 10px;
+}
+
+.search-button {
+  /* 调整按钮的样式 */
+  padding: 5px 15px; /* 内边距 */
+  font-size: 16px; /* 字体大小 */
+  background-color: #007bff; /* 背景颜色 */
+  color: white; /* 文本颜色 */
+  border: none; /* 无边框 */
+  border-radius: 5px; /* 边框圆角 */
+  cursor: pointer; /* 鼠标悬停时的指针形状 */
+  margin: 10px;
+}
+
+.search-button:hover {
+  /* 鼠标悬停在按钮上时的样式 */
+  background-color: #0056b3; /* 悬停时的背景颜色 */
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+#areaDropdown {
+  width: 200px; /* 或您希望的任何宽度 */
+}
+
+
+#conMeanDropdown {
+  width: 200px; /* 或您希望的任何宽度 */
+}
+
+.card-container {
+  display: flex; /* 使用flex布局 */
+}
+
+.card {
+  /* 添加必要的样式 */
+  margin-right: 20px; /* 在卡片和iframe之间添加一些间隔 */
+}
+
+.content-iframe {
+  width: 60%; 
+  height: 560px; 
+  border: none; 
+  border-radius: 15px;
+  background-color: #e6e5e5;
+  padding: 20px;
+  margin: 10px;
+}
+.card-body a {
+  text-decoration: none; /* 去除下划线 */
+  font-size: 10px;
+  
+}
+.card-title {
+  font-size: 24px; /* 这里设置您想要的字体大小 */
+  font-family:Arial, Helvetica, sans-serif
+}
